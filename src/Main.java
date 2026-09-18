@@ -13,6 +13,7 @@ public class Main {
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
+    public static final String SEARCH_CONTACT_BY_NUMBER  = "GN";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -52,6 +53,9 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case SEARCH_CONTACT_BY_NUMBER:
+                    searchContactByNumber(in, cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -146,5 +150,13 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+    private static void searchContactByNumber(Scanner in, ContactBook cBook) {
+        int phone = in.nextInt(); in.nextLine();
+        String name = cBook.getOlderContactNameByPhone(phone);
+        if (name != null)
+            System.out.println(name);
+        else System.out.println("Phone number does not exist.");
     }
 }
