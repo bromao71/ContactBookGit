@@ -18,11 +18,12 @@
 
 ## Task Summary
 
-The base implementation was provided by the teaching team, and our group
-completed the two missing commands:
+The base implementation was provided by the teaching team, and our group completed the two missing commands:
 
 - **GN** - search for a contact given its phone number
 - **EP** - check whether there are contacts sharing the same phone number
+
+In addition, we added Javadoc comments to every method in the provided classes (`Contact`, `ContactBook` and `Main`), documenting each method's purpose, parameters, return values and preconditions.
 
 
 ## Command Details
