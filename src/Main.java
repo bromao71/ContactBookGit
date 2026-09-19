@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 public class Main {
-    //Constantes que definem os comandos
+    //Constants defining the commands
     public static final String ADD_CONTACT    = "AC";
     public static final String REMOVE_CONTACT = "RC";
     public static final String GET_PHONE      = "GP";
@@ -17,7 +17,7 @@ public class Main {
     public static final String SAME_PHONE_NUMBER = "EP";
     public static final String QUIT           = "Q";
 
-    //Constantes que definem as mensagens para o utilizador
+    //Constants defining the messages shown to the user
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
     public static final String NAME_NOT_EXIST = "contactBook.Contact does not exist.";
     public static final String CONTACT_ADDED = "contactBook.Contact added.";
@@ -29,6 +29,12 @@ public class Main {
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
+    /**
+     * Entry point of the application. Reads commands from standard input
+     * in a loop, dispatching each one to its handler, until the QUIT
+     * command is received.
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         ContactBook cBook = new ContactBook();
@@ -74,6 +80,11 @@ public class Main {
         in.close();
     }
 
+    /**
+     * Reads a command from input and normalizes it to upper case.
+     * @param in the Scanner used to read input
+     * @return the command entered by the user, in upper case
+     */
     private static String getCommand(Scanner in) {
         String input;
 
@@ -81,6 +92,13 @@ public class Main {
         return input;
     }
 
+    /**
+     * Handles the AC command: reads a name, phone number and email from
+     * input and adds a new contact to the book, unless a contact with
+     * that name already exists.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to add the contact to
+     */
     private static void addContact(Scanner in, ContactBook cBook) {
         String name, email;
         int phone;
@@ -95,6 +113,12 @@ public class Main {
         else System.out.println(CONTACT_EXISTS);
     }
 
+    /**
+     * Handles the RC command: reads a name from input and removes the
+     * matching contact from the book, if it exists.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to remove the contact from
+     */
     private static void deleteContact(Scanner in, ContactBook cBook) {
         String name;
         name = in.nextLine();
@@ -105,6 +129,12 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
+    /**
+     * Handles the GP command: reads a name from input and prints the
+     * phone number of the matching contact, if it exists.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to search in
+     */
     private static void getPhone(Scanner in, ContactBook cBook) {
         String name;
         name = in.nextLine();
@@ -114,6 +144,12 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
+    /**
+     * Handles the GE command: reads a name from input and prints the
+     * email of the matching contact, if it exists.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to search in
+     */
     private static void getEmail(Scanner in, ContactBook cBook) {
         String name;
         name = in.nextLine();
@@ -123,6 +159,12 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
+    /**
+     * Handles the SP command: reads a name and a new phone number from
+     * input and updates the matching contact, if it exists.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to update
+     */
     private static void setPhone(Scanner in, ContactBook cBook) {
         String name;
         int phone;
@@ -135,6 +177,12 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
+    /**
+     * Handles the SE command: reads a name and a new email from input
+     * and updates the matching contact, if it exists.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to update
+     */
     private static void setEmail(Scanner in, ContactBook cBook) {
         String name;
         String email;
@@ -147,6 +195,11 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
+    /**
+     * Handles the LC command: prints every contact in the book, in
+     * insertion order, or a message if the book is empty.
+     * @param cBook the contact book to list
+     */
     private static void listAllContacts(ContactBook cBook) {
         if (cBook.getNumberOfContacts() != 0) {
             cBook.initializeIterator();
@@ -158,6 +211,13 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
 
+    /**
+     * Handles the GN command: reads a phone number from input and
+     * prints the name of the oldest contact with that number, or an
+     * error message if no contact has it.
+     * @param in the Scanner used to read input
+     * @param cBook the contact book to search in
+     */
     private static void searchContactByNumber(Scanner in, ContactBook cBook) {
         int phone = in.nextInt(); in.nextLine();
         String name = cBook.getOlderContactNameByPhone(phone);
@@ -166,6 +226,12 @@ public class Main {
         else System.out.println("Phone number does not exist.");
     }
 
+    /**
+     * Handles the EP command: checks whether any two contacts in the
+     * book share the same phone number and prints the corresponding
+     * message.
+     * @param cBook the contact book to check
+     */
     private static void samePhoneNumber(ContactBook cBook) {
         if (cBook.samePhoneNumber())
             System.out.println(CONTACTS_WITH_SAME_PHONE_NUMBER);
