@@ -1,31 +1,37 @@
 # ContactBookGit
 
-Software Engineering class of 2026/27 homework lab.1
+**Software Engineering class of 2026/27 - Homework Lab. 1**
 
-Group members:
-Bernardo Romão, nº67709
-Inês Isabel Silva, nº70929
-Elsa Coimbra, nº67915
+## Group Members
+
+| Nome | Número de aluno |
+|------|------------------|
+| Bernardo Romão | 67709 |
+| Elsa Coimbra | 67915 |
+| Inês Isabel Silva | 70929 |
 
 
-app information: 
+## Application Information
 
 ContactBookAplication
 is a contact book. It stores contact information such as email and phone number, and lets the user perform actions like creating, deleting
 and comparing contacts.
 
 
-summary of what was demanded from us:
+## Task Summary
 
 Implementation of two commands
 - GN  "look up a contact given her phone number (GN command)" SEARCH_CONTACT_BY_NUMBER
 - EP "check if there are repeated phones (EP command)" SAME_PHONE_NUMBER 
 
-Examples
 
+## Examples
+
+```
 GN
 123456789
 Phone number does not exist.
 
 EP
 All contacts have different phone numbers.
+```
