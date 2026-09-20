@@ -71,7 +71,7 @@ GN
 out:
 Phone number does not exist.
 
-Ep examples 
+EP examples 
 
 No repeated phone numbers
 in:
@@ -81,8 +81,20 @@ All contacts have different phone numbers.
 
 Repeated phone numbers
 in:
+AC
+João Silva
+912345678
+joao@email.com
+AC
+Maria Santos
+912345678
+maria@email.com
 EP
 out:
+Contact added.
+
+Contact added.
+
 There are contacts that share phone numbers.
 ```
 
@@ -98,10 +110,12 @@ There are contacts that share phone numbers.
 2. Compile the Java files:
    ```bash
    javac contactBook/*.java Main.java
+   ```
 
 3. Run the application:
     ```bash
     java Main
+    ```
 
 4. Enter commands (e.g., AC, GN, EP, Q) via standard input.
 
@@ -116,18 +130,18 @@ There are contacts that share phone numbers.
 4. Interact with the application using the built-in terminal/console.
 
 
-## How to teste
+## How to Test
 
 The teaching team provided tests in the tests/ folder. Each test has an input file (1_in_base.txt, ...) and the expected output file (1_out_base.txt, ...):
 
-base -> Base commands test
+Base -> Base commands test
 GN -> tests gn command 
 EP -> tests ep command 
 
-# Testing
-Tests are run with **JUnit 4** through the `Tests` class. Each test feeds an input file from the `tests/` folder to `Main` (as standard input) and compares the program's output with the expected output file.To run them, add the JUnit 4 library to the project (if your IDE does not include it)  and run the `Tests` class
+### Testing
+Tests are run with **JUnit 4** through the `Tests` class. Each test feeds an input file from the `tests/` folder to `Main` (as standard input) and compares the program's output with the expected output file. To run them, add the JUnit 4 library to the project (if your IDE does not include it)  and run the `Tests` class
 
-## Other Way
+### Other Way
 The user can also write their own tests manually and run them in the terminal of the IDE in use, where the project is open.
 
 ![Terminal output of the LC command](image.png)
