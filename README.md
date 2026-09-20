@@ -16,6 +16,28 @@
 **ContactBook** is a contact book application. It stores contact information such as name, email and phone number, and lets the user perform actions like creating, deleting and comparing contacts.
 
 
+## Project Structure
+
+```
+ContactBookGit/
+├── src/
+│   ├── Main.java              # Entry point; reads and dispatches commands
+│   ├── Tests.java             # JUnit test suite
+│   └── contactBook/
+│       ├── Contact.java       # Represents a single contact
+│       └── ContactBook.java   # Stores and manages the contact list
+├── tests/
+│   ├── 1_in_base.txt          # Input for the base commands test
+│   ├── 1_out_base.txt         # Expected output for the base commands test
+│   ├── 2_in_base_GN.txt       # Input for the GN command test
+│   ├── 2_out_base_GN.txt      # Expected output for the GN command test
+│   ├── 3_in_base_EP.txt       # Input for the EP command test
+│   └── 3_out_base_EP.txt      # Expected output for the EP command test
+├── image.png                  # Screenshot referenced in the Testing section
+└── README.md
+```
+
+
 ## Task Summary
 
 The base implementation was provided by the teaching team, and our group completed the two missing commands:
