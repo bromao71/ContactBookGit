@@ -102,7 +102,7 @@ GN -> tests gn command
 EP -> tests ep command 
 
 # Testing
-Tests are run with **JUnit 4** through the `Tests` class. Each test feeds an input file from the `tests/` folder to `Main` (as standard input) and compares the program's output with the expected output file.To run them, To run them, add the JUnit 4 library to the project and run the `Tests` class
+Tests are run with **JUnit 4** through the `Tests` class. Each test feeds an input file from the `tests/` folder to `Main` (as standard input) and compares the program's output with the expected output file.To run them, add the JUnit 4 library to the project (if your IDE does not include it)  and run the `Tests` class
 
 ## Other Way
 The user can also write their own tests manually and run them in the terminal of the IDE in use, where the project is open.
