@@ -55,12 +55,35 @@ Depending on the result, `Main.java` prints `"There are contacts that share phon
 ## Examples
 
 ```
+GN examples 
+
+Contact exists
+in:
+GN
+253253253
+out:
+Joana Dias
+
+Contact does not exist
+in:
 GN
 123456789
+out:
 Phone number does not exist.
 
+Ep examples 
+
+No repeated phone numbers
+in:
 EP
+out:
 All contacts have different phone numbers.
+
+Repeated phone numbers
+in:
+EP
+out:
+There are contacts that share phone numbers.
 ```
 
 ## How to Run
@@ -106,35 +129,5 @@ Tests are run with **JUnit 4** through the `Tests` class. Each test feeds an inp
 
 ## Other Way
 The user can also write their own tests manually and run them in the terminal of the IDE in use, where the project is open.
+
 ![Terminal output of the LC command](image.png)
-
-
-# GN examples 
-
-Contact exists:
-in:
-GN
-253253253
-out:
-Joana Dias
-
-Contact does not exist:
-in:
-GN
-123456789
-out:
-Phone number does not exist.
-
-# Ep examples 
-
-No repeated phone numbers:
-in:
-EP
-out:
-All contacts have different phone numbers.
-
-Repeated phone numbers:
-in:
-EP
-out:
-There are contacts that share phone numbers.
