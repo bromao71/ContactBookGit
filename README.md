@@ -29,7 +29,16 @@ In addition, we added Javadoc comments to every method in the provided classes (
 ## Command Details
 
 ### GN - Search Contact by Phone Number
-...
+
+The command is handled by `searchContactByNumber()` in `Main.java`, which reads a phone number from standard input and calls `ContactBook.getOlderContactNameByPhone()` to search for a matching contact.
+
+`ContactBook.getOlderContactNameByPhone()` works as follows:
+1. It calls the private helper method `searchIndex(int phone)` to locate the first contact with the specified phone number.
+2. `searchIndex(int phone)` performs a linear search from index `0` up to `counter - 1`. Since contacts are stored in insertion order, the first match found naturally corresponds to the oldest contact with that number.
+3. If a contact is found, its index is returned and `getOlderContactNameByPhone()` returns the contact's name.
+4. If no contact matches the given phone number, `searchIndex` returns `-1`, and `getOlderContactNameByPhone()` returns `null`.
+
+Depending on the result, `Main.java` prints the contact's name or `"Phone number does not exist."`
 
 ### EP - Check for Duplicate Phone Numbers
 
