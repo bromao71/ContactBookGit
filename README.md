@@ -62,3 +62,32 @@ Phone number does not exist.
 EP
 All contacts have different phone numbers.
 ```
+
+## How to Run
+
+### Prerequisites
+- **Java Development Kit (JDK)** version 8 or higher installed.
+
+### Option 1: Command Line
+
+1. Open a terminal and navigate to the project directory.
+
+2. Compile the Java files:
+   ```bash
+   javac contactBook/*.java Main.java
+
+3. Run the application:
+    ```bash
+    java Main
+
+4. Enter commands (e.g., AC, GN, EP, Q) via standard input.
+
+### Option 2: IntelliJ IDEA / Eclipse / VSCode
+
+1. Open the project folder in your IDE.
+
+2. Ensure the root directory containing Main.java is set as the Source Root.
+
+3. Right-click Main.java and select Run 'Main.main()'.
+
+4. Interact with the application using the built-in terminal/console.
