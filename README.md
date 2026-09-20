@@ -91,3 +91,50 @@ All contacts have different phone numbers.
 3. Right-click Main.java and select Run 'Main.main()'.
 
 4. Interact with the application using the built-in terminal/console.
+
+
+## How to teste
+
+The teaching team provided tests in the tests/ folder. Each test has an input file (1_in_base.txt, ...) and the expected output file (1_out_base.txt, ...):
+
+base -> Base commands test
+GN -> tests gn command 
+EP -> tests ep command 
+
+# Testing
+Tests are run with **JUnit 4** through the `Tests` class. Each test feeds an input file from the `tests/` folder to `Main` (as standard input) and compares the program's output with the expected output file.To run them, To run them, add the JUnit 4 library to the project and run the `Tests` class
+
+## Other Way
+The user can also write their own tests manually and run them in the terminal of the IDE in use, where the project is open.
+![Terminal output of the LC command](image.png)
+
+
+# GN examples 
+
+Contact exists:
+in:
+GN
+253253253
+out:
+Joana Dias
+
+Contact does not exist:
+in:
+GN
+123456789
+out:
+Phone number does not exist.
+
+# Ep examples 
+
+No repeated phone numbers:
+in:
+EP
+out:
+All contacts have different phone numbers.
+
+Repeated phone numbers:
+in:
+EP
+out:
+There are contacts that share phone numbers.
